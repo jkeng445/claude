@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <title>Adire Oniko Textile Pattern — Yoruba Tie-Resist Circle Motif</title>
+
+  <defs>
+    <!-- 120×120 concentric circle tile -->
+    <pattern id="tile" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#1B2A6B"/>
+
+      <!-- Three concentric rings -->
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#F5EFE0" stroke-width="2"/>
+      <circle cx="60" cy="60" r="35" fill="none" stroke="#F5EFE0" stroke-width="1.4"/>
+      <circle cx="60" cy="60" r="20" fill="none" stroke="#C4622D" stroke-width="1.6"/>
+
+      <!-- Radial spokes — 4 cardinals -->
+      <line x1="60" y1="10"  x2="60" y2="24"  stroke="#F5EFE0" stroke-width="1.5" opacity="0.7"/>
+      <line x1="60" y1="96"  x2="60" y2="110" stroke="#F5EFE0" stroke-width="1.5" opacity="0.7"/>
+      <line x1="10" y1="60"  x2="24" y2="60"  stroke="#F5EFE0" stroke-width="1.5" opacity="0.7"/>
+      <line x1="96" y1="60"  x2="110" y2="60" stroke="#F5EFE0" stroke-width="1.5" opacity="0.7"/>
+
+      <!-- Radial stubs — 4 diagonals -->
+      <line x1="25" y1="25" x2="33" y2="33" stroke="#F5EFE0" stroke-width="1"   opacity="0.45"/>
+      <line x1="95" y1="25" x2="87" y2="33" stroke="#F5EFE0" stroke-width="1"   opacity="0.45"/>
+      <line x1="95" y1="95" x2="87" y2="87" stroke="#F5EFE0" stroke-width="1"   opacity="0.45"/>
+      <line x1="25" y1="95" x2="33" y2="87" stroke="#F5EFE0" stroke-width="1"   opacity="0.45"/>
+
+      <!-- Rust orange cardinal tick marks at outer ring -->
+      <rect x="56" y="9"   width="8" height="6" rx="1" fill="#C4622D"/>
+      <rect x="56" y="105" width="8" height="6" rx="1" fill="#C4622D"/>
+      <rect x="9"  y="56"  width="6" height="8" rx="1" fill="#C4622D"/>
+      <rect x="105" y="56" width="6" height="8" rx="1" fill="#C4622D"/>
+
+      <!-- 8 small rust orange dots on inner ring at 45° intervals -->
+      <circle cx="74"  cy="60"  r="2.5" fill="#C4622D"/>
+      <circle cx="70"  cy="70"  r="2.5" fill="#C4622D"/>
+      <circle cx="60"  cy="74"  r="2.5" fill="#C4622D"/>
+      <circle cx="50"  cy="70"  r="2.5" fill="#C4622D"/>
+      <circle cx="46"  cy="60"  r="2.5" fill="#C4622D"/>
+      <circle cx="50"  cy="50"  r="2.5" fill="#C4622D"/>
+      <circle cx="60"  cy="46"  r="2.5" fill="#C4622D"/>
+      <circle cx="70"  cy="50"  r="2.5" fill="#C4622D"/>
+
+      <!-- Bone white corner pips (at tile corners, link into diamond grid between tiles) -->
+      <polygon points="60,0  65,5  60,10 55,5"  fill="#F5EFE0" opacity="0.5"/>
+      <polygon points="60,110 65,115 60,120 55,115" fill="#F5EFE0" opacity="0.5"/>
+      <polygon points="0,60  5,55  10,60  5,65"  fill="#F5EFE0" opacity="0.5"/>
+      <polygon points="110,60 115,55 120,60 115,65" fill="#F5EFE0" opacity="0.5"/>
+
+      <!-- Centre -->
+      <circle cx="60" cy="60" r="7" fill="#C4622D"/>
+      <circle cx="60" cy="60" r="3" fill="#F5EFE0"/>
+    </pattern>
+
+    <!-- Half-offset secondary accent layer (60,60 offset) -->
+    <pattern id="tile2" x="60" y="60" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="none"/>
+      <!-- Tiny ring at interstitial node -->
+      <circle cx="60" cy="60" r="10" fill="none" stroke="#F5EFE0" stroke-width="0.9" opacity="0.22"/>
+      <circle cx="60" cy="60" r="3"  fill="#C4622D" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== LAYER 1 – Base ===== -->
+  <rect width="800" height="800" fill="#1B2A6B"/>
+
+  <!-- ===== LAYER 2 – Primary circle tile ===== -->
+  <rect width="800" height="800" fill="url(#tile)"/>
+
+  <!-- ===== LAYER 3 – Interstitial accent ===== -->
+  <rect width="800" height="800" fill="url(#tile2)"/>
+
+  <!-- ===== LAYER 4 – Ghost echo rings ===== -->
+  <circle cx="400" cy="400" r="292" fill="none" stroke="#F5EFE0" stroke-width="1.4" opacity="0.020"/>
+  <circle cx="400" cy="400" r="244" fill="none" stroke="#F5EFE0" stroke-width="1.5" opacity="0.036"/>
+  <circle cx="400" cy="400" r="198" fill="none" stroke="#F5EFE0" stroke-width="1.8" opacity="0.055"/>
+  <circle cx="400" cy="400" r="158" fill="none" stroke="#F5EFE0" stroke-width="2"   opacity="0.078"/>
+  <circle cx="400" cy="400" r="122" fill="none" stroke="#F5EFE0" stroke-width="2.5" opacity="0.110"/>
+
+  <!-- ===== LAYER 5 – Central medallion ===== -->
+
+  <!-- Five concentric rings -->
+  <circle cx="400" cy="400" r="95"  fill="none" stroke="#F5EFE0" stroke-width="3.5"/>
+  <circle cx="400" cy="400" r="75"  fill="none" stroke="#F5EFE0" stroke-width="2.5"/>
+  <circle cx="400" cy="400" r="56"  fill="none" stroke="#F5EFE0" stroke-width="2"/>
+  <circle cx="400" cy="400" r="38"  fill="none" stroke="#C4622D" stroke-width="2.5"/>
+  <circle cx="400" cy="400" r="22"  fill="none" stroke="#F5EFE0" stroke-width="1.8"/>
+
+  <!-- 4-axis cross through centre (rust orange) -->
+  <line x1="400" y1="305" x2="400" y2="495" stroke="#C4622D" stroke-width="4.5"/>
+  <line x1="305" y1="400" x2="495" y2="400" stroke="#C4622D" stroke-width="4.5"/>
+
+  <!-- 4-axis diagonal lines (bone white) -->
+  <line x1="333" y1="333" x2="467" y2="467" stroke="#F5EFE0" stroke-width="2" opacity="0.72"/>
+  <line x1="467" y1="333" x2="333" y2="467" stroke="#F5EFE0" stroke-width="2" opacity="0.72"/>
+
+  <!-- Rust orange cardinal tick blocks on outer ring -->
+  <rect x="396" y="304" width="8"  height="14" rx="2" fill="#C4622D"/>
+  <rect x="396" y="482" width="8"  height="14" rx="2" fill="#C4622D"/>
+  <rect x="304" y="396" width="14" height="8"  rx="2" fill="#C4622D"/>
+  <rect x="482" y="396" width="14" height="8"  rx="2" fill="#C4622D"/>
+
+  <!-- Bone white dots on outer ring at diagonals -->
+  <circle cx="467" cy="333" r="7"  fill="#F5EFE0"/>
+  <circle cx="333" cy="333" r="7"  fill="#F5EFE0"/>
+  <circle cx="333" cy="467" r="7"  fill="#F5EFE0"/>
+  <circle cx="467" cy="467" r="7"  fill="#F5EFE0"/>
+
+  <!-- Rust orange ring at diagonal positions -->
+  <circle cx="467" cy="333" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="333" cy="333" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="333" cy="467" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="467" cy="467" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- 8 rust orange dots on inner accent ring -->
+  <circle cx="438" cy="400" r="5"  fill="#C4622D"/>
+  <circle cx="427" cy="427" r="5"  fill="#C4622D"/>
+  <circle cx="400" cy="438" r="5"  fill="#C4622D"/>
+  <circle cx="373" cy="427" r="5"  fill="#C4622D"/>
+  <circle cx="362" cy="400" r="5"  fill="#C4622D"/>
+  <circle cx="373" cy="373" r="5"  fill="#C4622D"/>
+  <circle cx="400" cy="362" r="5"  fill="#C4622D"/>
+  <circle cx="427" cy="373" r="5"  fill="#C4622D"/>
+
+  <!-- Centre target -->
+  <circle cx="400" cy="400" r="18" fill="#C4622D"/>
+  <circle cx="400" cy="400" r="10" fill="none" stroke="#F5EFE0" stroke-width="2"/>
+  <circle cx="400" cy="400" r="4"  fill="#F5EFE0"/>
+</svg>

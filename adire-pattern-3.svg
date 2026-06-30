@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <title>Adire Eleko Textile Pattern — Yoruba Concentric Square Wax-Resist</title>
+
+  <defs>
+    <!-- 80×80 concentric-square tile with stepped corner indicators -->
+    <pattern id="tile" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#1B2A6B"/>
+
+      <!-- Outer square -->
+      <rect x="4"  y="4"  width="72" height="72" fill="none" stroke="#F5EFE0" stroke-width="2"/>
+      <!-- Mid square -->
+      <rect x="16" y="16" width="48" height="48" fill="none" stroke="#F5EFE0" stroke-width="1.4"/>
+      <!-- Inner square (rust orange) -->
+      <rect x="28" y="28" width="24" height="24" fill="none" stroke="#C4622D" stroke-width="2"/>
+      <!-- Filled centre -->
+      <rect x="35" y="35" width="10" height="10" fill="#C4622D"/>
+
+      <!-- Corner diagonal connectors (outer to mid square corners) -->
+      <line x1="4"  y1="4"  x2="16" y2="16" stroke="#F5EFE0" stroke-width="1.2" opacity="0.6"/>
+      <line x1="76" y1="4"  x2="64" y2="16" stroke="#F5EFE0" stroke-width="1.2" opacity="0.6"/>
+      <line x1="76" y1="76" x2="64" y2="64" stroke="#F5EFE0" stroke-width="1.2" opacity="0.6"/>
+      <line x1="4"  y1="76" x2="16" y2="64" stroke="#F5EFE0" stroke-width="1.2" opacity="0.6"/>
+
+      <!-- Faint cross axis -->
+      <line x1="0"  y1="40" x2="80" y2="40" stroke="#C4622D" stroke-width="0.7" opacity="0.3"/>
+      <line x1="40" y1="0"  x2="40" y2="80" stroke="#C4622D" stroke-width="0.7" opacity="0.3"/>
+
+      <!-- Rust orange edge midpoint diamonds -->
+      <polygon points="40,0  44,4  40,8  36,4"  fill="#C4622D"/>
+      <polygon points="40,72 44,76 40,80 36,76" fill="#C4622D"/>
+      <polygon points="0,40  4,36  8,40  4,44"  fill="#C4622D"/>
+      <polygon points="72,40 76,36 80,40 76,44" fill="#C4622D"/>
+
+      <!-- Small bone white cross at centre -->
+      <circle cx="40" cy="40" r="2.5" fill="#F5EFE0"/>
+    </pattern>
+
+    <!-- Half-offset accent layer showing corner-meeting nodes -->
+    <pattern id="tile2" x="40" y="40" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="none"/>
+      <!-- Interstitial bone white diamond at tile intersection -->
+      <polygon points="40,30 50,40 40,50 30,40"
+               fill="none" stroke="#F5EFE0" stroke-width="0.9" opacity="0.25"/>
+      <circle cx="40" cy="40" r="2" fill="#F5EFE0" opacity="0.28"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== LAYER 1 – Base ===== -->
+  <rect width="800" height="800" fill="#1B2A6B"/>
+
+  <!-- ===== LAYER 2 – Primary square tile ===== -->
+  <rect width="800" height="800" fill="url(#tile)"/>
+
+  <!-- ===== LAYER 3 – Interstitial accent ===== -->
+  <rect width="800" height="800" fill="url(#tile2)"/>
+
+  <!-- ===== LAYER 4 – Ghost echo (concentric squares expanding from centre) ===== -->
+  <rect x="145" y="145" width="510" height="510" fill="none" stroke="#F5EFE0" stroke-width="1.4" opacity="0.022"/>
+  <rect x="165" y="165" width="470" height="470" fill="none" stroke="#F5EFE0" stroke-width="1.5" opacity="0.038"/>
+  <rect x="188" y="188" width="424" height="424" fill="none" stroke="#F5EFE0" stroke-width="1.8" opacity="0.057"/>
+  <rect x="212" y="212" width="376" height="376" fill="none" stroke="#F5EFE0" stroke-width="2"   opacity="0.080"/>
+  <rect x="236" y="236" width="328" height="328" fill="none" stroke="#F5EFE0" stroke-width="2.5" opacity="0.110"/>
+
+  <!-- ===== LAYER 5 – Central medallion (concentric squares) ===== -->
+
+  <!-- Six concentric square rings -->
+  <rect x="260" y="260" width="280" height="280" fill="none" stroke="#F5EFE0" stroke-width="3.5"/>
+  <rect x="278" y="278" width="244" height="244" fill="none" stroke="#F5EFE0" stroke-width="2.5"/>
+  <rect x="298" y="298" width="204" height="204" fill="none" stroke="#F5EFE0" stroke-width="2"/>
+  <rect x="318" y="318" width="164" height="164" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+  <rect x="338" y="338" width="124" height="124" fill="none" stroke="#F5EFE0" stroke-width="2"/>
+  <rect x="358" y="358" width="84"  height="84"  fill="none" stroke="#C4622D" stroke-width="2"/>
+
+  <!-- Cardinal cross through centre (rust orange) -->
+  <line x1="400" y1="248" x2="400" y2="552" stroke="#C4622D" stroke-width="4.5"/>
+  <line x1="248" y1="400" x2="552" y2="400" stroke="#C4622D" stroke-width="4.5"/>
+
+  <!-- Diagonal lines connecting outer square corners to second ring corners -->
+  <line x1="260" y1="260" x2="278" y2="278" stroke="#F5EFE0" stroke-width="2.5" opacity="0.8"/>
+  <line x1="540" y1="260" x2="522" y2="278" stroke="#F5EFE0" stroke-width="2.5" opacity="0.8"/>
+  <line x1="540" y1="540" x2="522" y2="522" stroke="#F5EFE0" stroke-width="2.5" opacity="0.8"/>
+  <line x1="260" y1="540" x2="278" y2="522" stroke="#F5EFE0" stroke-width="2.5" opacity="0.8"/>
+
+  <!-- Longer diagonal accents from outer corners inward -->
+  <line x1="260" y1="260" x2="340" y2="340" stroke="#F5EFE0" stroke-width="1.5" opacity="0.4"/>
+  <line x1="540" y1="260" x2="460" y2="340" stroke="#F5EFE0" stroke-width="1.5" opacity="0.4"/>
+  <line x1="540" y1="540" x2="460" y2="460" stroke="#F5EFE0" stroke-width="1.5" opacity="0.4"/>
+  <line x1="260" y1="540" x2="340" y2="460" stroke="#F5EFE0" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Rust orange cardinal arm terminals (diamond arrowheads) -->
+  <polygon points="400,248 412,262 400,276 388,262" fill="#C4622D"/>
+  <polygon points="400,524 412,538 400,552 388,538" fill="#C4622D"/>
+  <polygon points="248,400 262,388 276,400 262,412" fill="#C4622D"/>
+  <polygon points="524,400 538,388 552,400 538,412" fill="#C4622D"/>
+
+  <!-- Bone white corner accent circles at outer square corners -->
+  <circle cx="260" cy="260" r="7" fill="#F5EFE0"/>
+  <circle cx="540" cy="260" r="7" fill="#F5EFE0"/>
+  <circle cx="540" cy="540" r="7" fill="#F5EFE0"/>
+  <circle cx="260" cy="540" r="7" fill="#F5EFE0"/>
+
+  <!-- Rust orange ring around each corner circle -->
+  <circle cx="260" cy="260" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="540" cy="260" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="540" cy="540" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="260" cy="540" r="13" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Rust orange edge midpoint diamonds on outer square -->
+  <polygon points="400,260 410,270 400,280 390,270" fill="#C4622D"/>
+  <polygon points="400,520 410,530 400,540 390,530" fill="#C4622D"/>
+  <polygon points="260,400 270,390 280,400 270,410" fill="#C4622D"/>
+  <polygon points="520,400 530,390 540,400 530,410" fill="#C4622D"/>
+
+  <!-- Centre target -->
+  <circle cx="400" cy="400" r="28" fill="none" stroke="#F5EFE0" stroke-width="2.5"/>
+  <circle cx="400" cy="400" r="18" fill="#C4622D"/>
+  <rect    x="394" y="394" width="12" height="12" fill="none" stroke="#F5EFE0" stroke-width="1.8"/>
+  <circle cx="400" cy="400" r="4"  fill="#F5EFE0"/>
+</svg>
