@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <title>Adire Indigo Textile Pattern — Yoruba Resist-Dye</title>
+
+  <defs>
+    <!-- Seamless 100×100 tile: double-diamond with stepped cardinal details -->
+    <pattern id="tile" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="#1B2A6B"/>
+
+      <!-- Outer diamond -->
+      <polygon points="50,3 97,50 50,97 3,50"
+               fill="none" stroke="#F5EFE0" stroke-width="2"/>
+
+      <!-- Inner diamond -->
+      <polygon points="50,22 78,50 50,78 22,50"
+               fill="none" stroke="#F5EFE0" stroke-width="1.2"/>
+
+      <!-- Faint cross axis (resist-dye wax lines) -->
+      <line x1="3"  y1="50" x2="97" y2="50" stroke="#C4622D" stroke-width="0.7" opacity="0.35"/>
+      <line x1="50" y1="3"  x2="50" y2="97" stroke="#C4622D" stroke-width="0.7" opacity="0.35"/>
+
+      <!-- Very faint diagonal grid (underlying cloth weave suggestion) -->
+      <line x1="0"   y1="0"   x2="100" y2="100" stroke="#F5EFE0" stroke-width="0.4" opacity="0.12"/>
+      <line x1="100" y1="0"   x2="0"   y2="100" stroke="#F5EFE0" stroke-width="0.4" opacity="0.12"/>
+
+      <!-- Cardinal-point rust orange circles -->
+      <circle cx="50" cy="3"  r="3.8" fill="#C4622D"/>
+      <circle cx="97" cy="50" r="3.8" fill="#C4622D"/>
+      <circle cx="50" cy="97" r="3.8" fill="#C4622D"/>
+      <circle cx="3"  cy="50" r="3.8" fill="#C4622D"/>
+
+      <!-- Step notches on each diamond side (hand-drawn quality) -->
+      <line x1="67" y1="22" x2="78" y2="33" stroke="#F5EFE0" stroke-width="1.3" opacity="0.65"/>
+      <line x1="67" y1="78" x2="78" y2="67" stroke="#F5EFE0" stroke-width="1.3" opacity="0.65"/>
+      <line x1="22" y1="78" x2="33" y2="67" stroke="#F5EFE0" stroke-width="1.3" opacity="0.65"/>
+      <line x1="22" y1="22" x2="33" y2="33" stroke="#F5EFE0" stroke-width="1.3" opacity="0.65"/>
+
+      <!-- Small rust orange diamond at centre -->
+      <polygon points="50,43 57,50 50,57 43,50" fill="#C4622D"/>
+
+      <!-- Bone white corner pip marks -->
+      <circle cx="14" cy="14" r="2.2" fill="#F5EFE0" opacity="0.45"/>
+      <circle cx="86" cy="14" r="2.2" fill="#F5EFE0" opacity="0.45"/>
+      <circle cx="86" cy="86" r="2.2" fill="#F5EFE0" opacity="0.45"/>
+      <circle cx="14" cy="86" r="2.2" fill="#F5EFE0" opacity="0.45"/>
+    </pattern>
+
+    <!-- Alternating half-offset tile for secondary fill layer -->
+    <pattern id="tile2" x="50" y="50" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none"/>
+
+      <!-- Very small centered diamond accent for interstitial grid nodes -->
+      <polygon points="50,38 62,50 50,62 38,50"
+               fill="none" stroke="#F5EFE0" stroke-width="0.9" opacity="0.28"/>
+
+      <circle cx="50" cy="50" r="2" fill="#F5EFE0" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== LAYER 1 – Deep indigo base ===== -->
+  <rect width="800" height="800" fill="#1B2A6B"/>
+
+  <!-- ===== LAYER 2 – Primary tile pattern ===== -->
+  <rect width="800" height="800" fill="url(#tile)"/>
+
+  <!-- ===== LAYER 3 – Interstitial accent grid ===== -->
+  <rect width="800" height="800" fill="url(#tile2)"/>
+
+  <!-- ===== LAYER 4 – Ghost echo rings (central motif radiating outward) ===== -->
+  <!-- Each ring is the same diamond shape scaled up, opacity decreasing outward -->
+
+  <!-- Echo 5 — outermost, barely visible -->
+  <polygon points="400,148 652,400 400,652 148,400"
+           fill="none" stroke="#F5EFE0" stroke-width="1.2" opacity="0.022"/>
+  <!-- Echo 4 -->
+  <polygon points="400,178 622,400 400,622 178,400"
+           fill="none" stroke="#F5EFE0" stroke-width="1.4" opacity="0.038"/>
+  <!-- Echo 3 -->
+  <polygon points="400,208 592,400 400,592 208,400"
+           fill="none" stroke="#F5EFE0" stroke-width="1.6" opacity="0.055"/>
+  <!-- Echo 2 -->
+  <polygon points="400,240 560,400 400,560 240,400"
+           fill="none" stroke="#F5EFE0" stroke-width="2"   opacity="0.080"/>
+  <!-- Echo 1 — closest to centre, most legible -->
+  <polygon points="400,272 528,400 400,528 272,400"
+           fill="none" stroke="#F5EFE0" stroke-width="2.5" opacity="0.115"/>
+
+  <!-- ===== LAYER 5 – Central medallion ===== -->
+
+  <!-- Outer diamond ring — bone white -->
+  <polygon points="400,290 510,400 400,510 290,400"
+           fill="none" stroke="#F5EFE0" stroke-width="3.5"/>
+
+  <!-- Secondary diamond ring — bone white -->
+  <polygon points="400,322 478,400 400,478 322,400"
+           fill="none" stroke="#F5EFE0" stroke-width="2.2"/>
+
+  <!-- Innermost accent diamond — rust orange -->
+  <polygon points="400,354 446,400 400,446 354,400"
+           fill="none" stroke="#C4622D" stroke-width="2"/>
+
+  <!-- Cardinal cross arms — rust orange -->
+  <line x1="400" y1="268" x2="400" y2="532" stroke="#C4622D" stroke-width="4.5"/>
+  <line x1="268" y1="400" x2="532" y2="400" stroke="#C4622D" stroke-width="4.5"/>
+
+  <!-- Cross-arm terminal diamonds (cardinal arrowheads) -->
+  <polygon points="400,268 412,282 400,296 388,282" fill="#C4622D"/>
+  <polygon points="400,504 412,518 400,532 388,518" fill="#C4622D"/>
+  <polygon points="268,400 282,388 296,400 282,412" fill="#C4622D"/>
+  <polygon points="504,400 518,388 532,400 518,412" fill="#C4622D"/>
+
+  <!-- Diagonal connecting lines (bone white) -->
+  <line x1="336" y1="336" x2="464" y2="464" stroke="#F5EFE0" stroke-width="1.8" opacity="0.72"/>
+  <line x1="464" y1="336" x2="336" y2="464" stroke="#F5EFE0" stroke-width="1.8" opacity="0.72"/>
+
+  <!-- Step notches on outer diamond sides — scaled version of tile detail -->
+  <!-- Top-right side notch (~455, 345) -->
+  <line x1="447" y1="337" x2="463" y2="353" stroke="#F5EFE0" stroke-width="2.2" opacity="0.70"/>
+  <line x1="438" y1="328" x2="454" y2="344" stroke="#F5EFE0" stroke-width="1.5" opacity="0.40"/>
+  <!-- Bottom-right notch (~455, 455) -->
+  <line x1="447" y1="463" x2="463" y2="447" stroke="#F5EFE0" stroke-width="2.2" opacity="0.70"/>
+  <line x1="438" y1="472" x2="454" y2="456" stroke="#F5EFE0" stroke-width="1.5" opacity="0.40"/>
+  <!-- Bottom-left notch (~345, 455) -->
+  <line x1="353" y1="463" x2="337" y2="447" stroke="#F5EFE0" stroke-width="2.2" opacity="0.70"/>
+  <line x1="362" y1="472" x2="346" y2="456" stroke="#F5EFE0" stroke-width="1.5" opacity="0.40"/>
+  <!-- Top-left notch (~345, 345) -->
+  <line x1="353" y1="337" x2="337" y2="353" stroke="#F5EFE0" stroke-width="2.2" opacity="0.70"/>
+  <line x1="362" y1="328" x2="346" y2="344" stroke="#F5EFE0" stroke-width="1.5" opacity="0.40"/>
+
+  <!-- Diagonal corner accent circles — bone white -->
+  <circle cx="337" cy="337" r="7.5" fill="#F5EFE0"/>
+  <circle cx="463" cy="337" r="7.5" fill="#F5EFE0"/>
+  <circle cx="463" cy="463" r="7.5" fill="#F5EFE0"/>
+  <circle cx="337" cy="463" r="7.5" fill="#F5EFE0"/>
+
+  <!-- Small rust orange ring at each diagonal corner -->
+  <circle cx="337" cy="337" r="12" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="463" cy="337" r="12" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="463" cy="463" r="12" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="337" cy="463" r="12" fill="none" stroke="#C4622D" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Centre concentric medallion -->
+  <circle cx="400" cy="400" r="30" fill="none" stroke="#F5EFE0" stroke-width="2.5"/>
+  <circle cx="400" cy="400" r="20" fill="#C4622D"/>
+  <circle cx="400" cy="400" r="11" fill="none" stroke="#F5EFE0" stroke-width="1.8"/>
+  <circle cx="400" cy="400" r="5"  fill="#F5EFE0"/>
+</svg>
