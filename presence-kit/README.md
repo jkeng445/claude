@@ -27,6 +27,8 @@ Use it two ways:
 | **4. Show up** | 3–12 | Posting rhythm, daily engagement block, a weekly "signature" piece | `templates/30-day-calendar.csv` + the client-type playbook |
 | **5. Measure & adjust** | every 2 weeks | Keep what works, cut what doesn't | `templates/scorecard.md` |
 
+**To run it:** `IMPLEMENTATION.md` has the setup sprint, the weekly rhythm, and the failure modes in the order they hit. `live/` holds the kit filled in for a real subject, so you can see what "done" looks like.
+
 ## Pick the playbook
 
 | Client | Main platform | Second | Result to track | Playbook |
