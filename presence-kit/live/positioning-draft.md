@@ -16,9 +16,9 @@ From the work in this repository:
 | A social-media system packaged for resale, with honest milestone numbers | You think in systems and products, not one-offs |
 | Working across diagnostics, culture, and AI in one week | You're a builder who ships across domains fast |
 
-**[CONFIRM] Name and how you want it to appear:** ______
-**[CONFIRM] Current role and company:** ______
-**[CONFIRM] Where you're based:** ______
+- **[CONFIRM] Name**, as you want it to appear: ______
+- **[CONFIRM] Current role and company:** ______
+- **[CONFIRM] Where you're based:** ______
 
 ---
 
