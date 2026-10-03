@@ -1,46 +1,66 @@
 # live/ — the kit filled in for a real subject
 
-**Subject:** the repo owner, founder/CEO track, LinkedIn, 3–5 hrs/week.
+**Subject:** a clothing brand selling to the West African diaspora in the UK, US
+and Canada. **Platforms:** Instagram + TikTok, Pinterest second. **Time:** 3–5
+hrs/week.
 
-| File | What it is | Status |
-|---|---|---|
-| `positioning-draft.md` | Three positioning options, with a recommendation | **Needs your decision** |
-| `linkedin-copy.md` | Paste-ready headline, About, Featured, settings | Draft — blocked on positioning choice + your background |
-| `first-9-posts.md` | The nine launch posts, hooks written | Draft — needs your real examples in the slots |
+| File | What it is |
+|---|---|
+| `brand-foundation.md` | Positioning, the name decision, where to manufacture, pricing, voice, palette, the product line |
+| `instagram-tiktok-copy.md` | Handles, bios, highlights, pinned grid, shop page essentials |
+| `first-9-posts.md` | The nine launch posts with opening frames written, plus the ongoing rotation |
+| `../../brand/` | Logomark, wordmark, lockup — SVG, scale to any size |
 
-## Read this before using any of it
+**Superseded:** this previously held a founder/CEO LinkedIn track. You sell to
+people, not institutions, so it's been removed. It's in git history if you want
+it back.
 
-I wrote the draft from what's visible in this repository, not from facts you
-gave me. **Anything marked `[CONFIRM]` is my inference and may be wrong.** The
-background paragraph in the About section is deliberately left blank rather than
-invented — a fabricated credential on a public profile is the one mistake you
-cannot walk back.
+## Read this first
 
-## The five things I need from you
+The brand name **ARÓ** (Yoruba for indigo dye) is my placeholder, not your
+decision. Anything marked `[CONFIRM]` is my inference from this repository, not
+a fact you gave me.
 
-Answer these and I'll finish all three files in one pass:
+## The order that actually matters
 
-1. **Your name**, exactly as it should appear, and your **current role and
-   company**.
-2. **Which positioning option** — A (applied-AI builder, my recommendation),
-   B (African-market technologist), or C (builder in public).
-3. **Your background in 3–4 lines**: what you've built, where you've worked,
-   anything a stranger would recognise. If you're early and don't have
-   credentials yet, say so — "early and shipping" is a workable position;
-   vagueness is not.
-4. **The one action** a follower should take: contact you for work, join a
-   newsletter, or join a waitlist.
-5. **Two real stories** for the posts — ideally something you refused to ship
-   (post 4) and something you got wrong (post 8). These two carry the whole set.
+Most people start with the logo. That's the wrong end. Do this instead:
 
-## Then the order of operations
+1. **Decide where it's made** (`brand-foundation.md` §5). Everything —
+   price, delivery promise, what you can honestly claim — follows from it. The
+   shipping maths is the thing that kills diaspora clothing brands.
+2. **Clear the name:** trademark search in class 25, then domain, then handles.
+   Don't print a label until all three pass.
+3. **Order samples** of three pieces and approve them.
+4. **One photo day.** A friend with a recent phone, natural light, 2 people,
+   neutral backdrop. Target 40 usable shots: flat lays, on-body, motif
+   close-ups. This is the single biggest lever on whether anyone buys.
+5. **Set up the shop** (Shopify + Stripe), priced in GBP/USD/CAD with delivery
+   cost visible before checkout.
+6. **Bank the nine posts,** then announce.
 
-1. Confirm the five above → I finish the copy
-2. You take the photo (20 min, window light, plain wall — see `../IMPLEMENTATION.md`)
-3. Profile goes live
-4. Nine posts banked, three scheduled
-5. Build the list of 20 target accounts
-6. Announce, then start the weekly rhythm
+Realistically: **4–6 weeks to launch** if samples arrive on time, with roughly
+$320 lean (print-on-demand only) or ~$2,000 including a small hand-dyed capsule.
 
-Realistically: profile live within a week, first post the week after. Days 30 /
-60 / 90 targets are in `../playbooks/ceo.md`.
+## What I need from you
+
+1. **The name** — ARÓ, or yours. Say which and I'll redo the assets and copy.
+2. **Which manufacturing route** — print-on-demand, artisan capsule, or both.
+3. **Do you have a maker relationship yet?** Post 6 depends on it, and I've
+   written an honest alternative in case you don't.
+4. **Your reason for starting** — the real scene, for post 8.
+5. **Your market priority** — UK, US, or Canada first. It changes which
+   print partner and which currency leads.
+
+Answer those and I'll finish the copy, price the range against live quotes, and
+write the product-page story cards.
+
+## Targets (from `../playbooks/brand.md`)
+
+| Day | Followers | Monthly link clicks | Sales |
+|---|---|---|---|
+| 30 | 200–500 | 50–150 | pre-launch |
+| 60 | 500–1,500 | 150–500 | first 10–25 |
+| 90 | 1,000–3,000 | 400–1,200 | 40–80 cumulative |
+
+Below these at day 60, check in this order: **photo quality → price → audience.**
+It is almost always the photos.

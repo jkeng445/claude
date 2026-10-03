@@ -1,163 +1,164 @@
 # The first 9 posts
 
-Bank all nine **before** you announce the profile. Schedule three; keep six in
-reserve so a busy week can't break the streak.
+Bank all nine before you announce. Schedule three; keep six in reserve so a busy
+week can't break the streak.
 
-**How to use these:** the hooks are written and should stay close to as-is — the
-first two lines do all the work on LinkedIn. The bodies are scaffolded, and
-`[...]` marks where your real detail goes. **A post with my generic example in
-it is worse than no post.** If you can't fill a slot with something true, cut
-that post and use a reserve.
+**Most of these are short video.** Shoot vertical once, post to Reels, TikTok,
+and Shorts. You do not need a camera — a recent phone in daylight beats bad
+studio lighting. The first 1.5 seconds decide whether anyone sees the rest, so
+the opening frame matters more than everything after it.
 
-Format rules: short lines, blank line between each, no emoji bullets, links in
-the first comment.
-
----
-
-### 1 · The belief (post this first)
-*Pillar: point of view*
-
-> Most AI products are built to sound confident.
->
-> I work on the ones where that's the dangerous setting.
-
-Body:
-- The domains you work in and why confidence is a liability there
-- One concrete example of a system refusing to answer, and why that was correct
-- `[your own line on what you think the industry gets wrong]`
-
-Close: *What's a case in your work where "I don't know" was the right output?*
+`[...]` marks where your real detail goes. A post with my placeholder left in is
+worse than no post.
 
 ---
 
-### 2 · The controls story
-*Pillar: building in high-stakes domains · your strongest proof*
+### 1 · What this is
+*Pillar: product · Format: carousel or single image*
 
-> A diagnostic test can give you a perfectly clear positive result that means
-> absolutely nothing.
->
-> Here's the rule we hard-coded because of it.
+**Opening frame/line:** *Heritage you don't save for Sunday.*
 
-Body:
-- If the negative control shows amplification, the run is contaminated. Every
-  tube in it is unreadable, however clean the sample looks
-- So the assistant checks controls first and returns INVALID for the whole run,
-  refusing to report any sample result
-- The lesson: in high-stakes tools, the valuable behaviour is often the refusal,
-  not the answer
-- `[what this cost you to build, or what a reviewer said about it]`
-
-Close: *What's the equivalent "check the controls first" rule in your domain?*
+- Image: the hero piece worn in an ordinary setting — a kitchen, a bus stop, a
+  desk. **Not** a studio, and not a wedding.
+- Caption: what ARÓ is in three lines. The pattern's name, the technique it comes
+  from, where it ships from and how fast.
+- Close: *Which pattern would you wear first — Ọ̀nà, Oniko, or Eleko?*
 
 ---
 
-### 3 · The demo gap
-*Pillar: point of view*
+### 2 · The stamp
+*Pillar: behind the scenes · Format: video, 15–25s · **your strongest post***
 
-> The distance between an AI demo and something a nurse will actually use is not
-> a engineering gap.
->
-> It's a trust gap, and it's mostly made of edge cases nobody filmed.
+**Opening frame:** a hand pressing a carved stamp onto plain cloth. No face, no
+talking, no intro. Just the press.
 
-Body: three things that break between demo and deployment in your experience —
-`[be specific: lighting, connectivity, who's holding the phone, what happens at
-3am]`
+- Then: the cloth going into indigo, and the moment it oxidises from green to
+  blue as it hits the air. That colour change is the single most watchable thing
+  in this entire craft.
+- Text on screen: *This is eleko. The paste blocks the dye. The pattern is what
+  the dye never touched.*
+- No voiceover needed. Let it be quiet.
 
-Close: one line on what you do differently now.
-
----
-
-### 4 · What I refused to ship
-*Pillar: building in high-stakes domains*
-
-> `[The feature someone asked you for that you said no to]`
->
-> I said no, and I'd say no again.
-
-Body: what was asked, why it was reasonable to ask, the specific harm it would
-have enabled, what you built instead.
-
-This is your most credible post type. It's also the hardest to fake, which is
-exactly why it works.
+> If you can only make one piece of content this month, make this one.
 
 ---
 
-### 5 · Where I'm from
-*Pillar: the human*
+### 3 · Three ways to wear it
+*Pillar: product in use · Format: video, 20s*
 
-> `[Opening about your background / where you grew up / what you saw]`
+**Opening line:** *One shirt, three Tuesdays.*
 
-Body: the connection between that and what you build now. Specific scene, not a
-mission statement.
-
-Optional and strong if it's true: the Adire indigo work — a craft where the
-pattern is made by what you *block out*, not what you add. Resist-dyeing as a
-way of thinking about constraints in a system. Only use this if it's genuinely
-yours; borrowed heritage reads instantly as borrowed.
+Same piece styled three ways — work, dinner, weekend. Hard cuts on the beat.
+This is the post that answers "but where would I actually wear it?", which is
+the real objection stopping the sale.
 
 ---
 
-### 6 · The uncomfortable opinion
-*Pillar: point of view · expect disagreement*
+### 4 · The shipping answer
+*Pillar: proof · Format: text-on-image or talking video, 15s*
 
-> Benchmark scores tell you almost nothing about whether a model is safe to put
-> in front of a technician.
->
-> `[Your sharper version of this]`
+**Opening line:** *"How long will it take to reach London?" Three to five days.*
 
-Body: why the thing the industry measures isn't the thing that matters in your
-domain, what you'd measure instead, and the one case that convinced you.
-
-Close with a real question, not a rhetorical one. Reply to every disagreement in
-the comments — that's where this post earns its value.
+- Explain, plainly, that your everyday range is printed in the UK/US and ships
+  locally, which is why it's fast and why there's no customs surprise.
+- Say what the hand-dyed capsule is and why that one takes longer.
+- This post will underperform on likes and overperform on sales. Post it anyway.
 
 ---
 
-### 7 · The ship post
-*Pillar: the work*
+### 5 · What the pattern means
+*Pillar: the craft · Format: carousel*
 
-> `[What you shipped]`. Here's what's in it and what's still wrong with it.
+**Opening frame:** extreme close-up of one motif, filling the screen.
 
-Body: what it does, one number, one honest limitation, what's next. The
-limitation is what makes people trust the rest.
+Then zoom out, step by step, to the full cloth and the finished garment. Caption
+explains the motif: `[what the double-diamond or the circle means, and why that
+technique produces it]`.
 
----
-
-### 8 · The mistake
-*Pillar: the human*
-
-> `[A real thing you got wrong — a wrong assumption, a feature nobody used, a
-> deployment that failed]`
->
-> It cost `[time/money/trust]`. Here's what I'd do differently.
-
-Body: what you believed, what actually happened, what changed in how you work.
-
-No redemption arc. Just the lesson.
+Teach one thing. People save posts that taught them something, and saves push
+reach harder than likes.
 
 ---
 
-### 9 · The open door
-*Pillar: the work · your one direct ask of the nine*
+### 6 · The maker
+*Pillar: the people · Format: video or photo set*
 
-> I'm looking to work with `[specific type of team]` on `[specific type of
-> problem]`.
+`[A named artisan, with their permission — their hands, their workshop, their
+name.]`
 
-Body: two sentences on what you bring, one on what a good fit looks like, one on
-what to do next.
+Say how they're paid. One honest sentence: *"Artisans are paid per piece at an
+agreed rate before anything goes on sale."*
 
-One ask in nine posts. That ratio is what makes the ask land.
+**If you don't yet have a maker relationship, do not fake this one.** Replace it
+with a post about the tradition itself and where it comes from — Abeokuta,
+Ibadan, the women who built the craft — and post the maker version when it's
+real.
 
 ---
 
-## After these nine
+### 7 · Printed vs hand-dyed
+*Pillar: proof · Format: side-by-side video or carousel*
 
-Your ongoing rotation, 3 a week:
+**Opening line:** *One of these was dyed by hand. One was printed. Here's how to
+tell — and why we say which is which.*
 
-| Week | Mon | Wed | Thu |
+Show both. Explain the difference honestly, including that the printed one is a
+print.
+
+This post does something unusual: it makes you *more* trustworthy by admitting
+what you don't hand-make. Nobody else in this category does it, and your buyer
+has absolutely been burned by someone claiming otherwise.
+
+---
+
+### 8 · Why you started
+*Pillar: the human · Format: talking video, 30s, or photo + caption*
+
+`[Your real reason. A specific scene, not a mission statement — the wardrobe
+where the good cloth waits for a wedding, the thing someone said, the moment you
+decided.]`
+
+Your face in this one. People buy clothing from people.
+
+---
+
+### 9 · The first drop
+*Pillar: product · your one direct ask of the nine*
+
+**Opening line:** *[N] pieces. [Date]. Here's everything in it.*
+
+What's in the drop, the prices, the sizes, when it opens, how to be first. Link
+in bio, and say the word "link in bio" out loud in the video — people miss it
+otherwise.
+
+One hard ask in nine posts. That ratio is what makes the ask land.
+
+---
+
+## After the nine
+
+**3–5 posts a week, at least two of them video.** Rotation:
+
+| Week | Post 1 | Post 2 | Post 3 |
 |---|---|---|---|
-| A | Building / high-stakes | Point of view | The work |
-| B | Point of view | Building / high-stakes | The human |
+| A | Product in use | Behind the scenes / craft | Proof (review, customer photo) |
+| B | Behind the scenes / craft | Product in use | Value or culture post |
 
-Repeat. Pull topics from what you actually did that week — the best posts are
-Tuesday's problem written down on Wednesday.
+**Stories daily, low effort:** packing an order, a fabric close-up, a poll
+between two colourways, a question box. Stories are where you build the
+relationship that the feed converts.
+
+## The growth moves that actually matter here
+
+1. **Seed 20 micro-creators** (2k–20k followers, diaspora fashion, slow fashion,
+   African culture accounts) with a free piece. Expect about 1 in 4 to post.
+   That's a normal hit rate, not a failure.
+2. **Repost every customer photo**, with permission and credit. Free content,
+   and it's proof.
+3. **Pinterest** — upload every product and pattern image. Pins surface for
+   months and years; feed posts die in 48 hours. Highest-leverage hour you'll
+   spend.
+4. **Answer every DM.** On a new shop, each DM is a potential sale, and most
+   will be asking about sizing or shipping.
+5. **Only boost what already worked.** When a post outperforms organically, put
+   $5–10/day behind it. Never pay to push a post that failed for free.
