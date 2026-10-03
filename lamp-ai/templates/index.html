@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAMP Assistant</title>
+<style>
+  :root {
+    --bg:#f6f7f9; --fg:#14181f; --muted:#5c6475; --card:#fff; --line:#dfe3ea;
+    --accent:#1d6fd0; --pos:#b3261e; --neg:#1b7f4b; --warn:#9a6400;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#10141b; --fg:#e8ebf0; --muted:#9aa3b5; --card:#181e28;
+            --line:#2a3240; --accent:#5aa2f0; --pos:#ff8a80; --neg:#6ddf9f; --warn:#f0c04a; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+  header{padding:16px;border-bottom:1px solid var(--line);background:var(--card)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px}
+  h1{margin:0;font-size:19px}
+  .sub{color:var(--muted);font-size:13px;margin-top:4px}
+  nav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+  nav button{padding:8px 14px;font:inherit;font-size:14px;border:1px solid var(--line);
+             background:var(--card);color:var(--fg);border-radius:999px;cursor:pointer}
+  nav button[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+  #log{min-height:220px;display:flex;flex-direction:column;gap:12px;padding:4px 0 16px}
+  .msg{padding:12px 14px;border-radius:10px;border:1px solid var(--line);
+       background:var(--card);white-space:pre-wrap;overflow-wrap:anywhere}
+  .msg.me{background:transparent;border-style:dashed}
+  .msg.structured{white-space:normal}
+  .msg.err{border-color:var(--pos);color:var(--pos)}
+  .who{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+       margin-bottom:6px}
+  form{position:sticky;bottom:0;background:var(--bg);padding:12px 0 20px;
+       border-top:1px solid var(--line)}
+  textarea{width:100%;min-height:76px;padding:11px;font:inherit;resize:vertical;
+           border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}
+  .row{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+  button.go{padding:11px 20px;font:inherit;font-weight:600;background:var(--accent);
+            color:#fff;border:0;border-radius:8px;cursor:pointer}
+  button.go[disabled]{opacity:.55;cursor:default}
+  .files{font-size:13px;color:var(--muted)}
+  table{border-collapse:collapse;width:100%;margin:10px 0;font-size:14px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .call-pos{color:var(--pos);font-weight:600}
+  .call-neg{color:var(--neg);font-weight:600}
+  .call-other{color:var(--warn);font-weight:600}
+  .banner{padding:10px 12px;border-radius:8px;font-size:14px;margin-bottom:10px;
+          border:1px solid var(--line)}
+  .banner.bad{border-color:var(--pos);color:var(--pos)}
+  .banner.ok{border-color:var(--neg);color:var(--neg)}
+  footer{color:var(--muted);font-size:12px;padding:0 0 28px}
+  ul{margin:6px 0;padding-left:20px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>LAMP Assistant</h1>
+  <div class="sub">Decision support and education. Not a medical device, and not a
+    substitute for laboratory confirmation or a clinician.</div>
+</div></header>
+
+<main class="wrap">
+  <nav id="tabs" role="tablist">
+    {% for key, m in modes.items() %}
+    <button role="tab" data-mode="{{ key }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ m.label }}</button>
+    {% endfor %}
+  </nav>
+
+  <div id="log" aria-live="polite"></div>
+
+  <form id="form">
+    <textarea id="input" placeholder="Ask a question…"></textarea>
+    <div class="row">
+      <input type="file" id="files" accept="image/png,image/jpeg,image/webp" multiple>
+      <span class="files" id="fileinfo"></span>
+      <span style="flex:1"></span>
+      <button class="go" type="submit" id="send">Send</button>
+    </div>
+  </form>
+  <footer>Results shown here describe what was detected in a sample. They are not a
+    diagnosis. Confirm with your laboratory's reference method.</footer>
+</main>
+
+<script>
+const PLACEHOLDER = {
+  ask: "Ask a question…",
+  read: "Describe the run: sample labels, time point, control positions. Attach a photo of the tubes with controls in frame.",
+  design: "Paste a primer set to review (F3, B3, FIP, BIP, LF, LB), or describe the target region.",
+  explain: "What should we explain, and to whom?",
+};
+let mode = document.querySelector("#tabs button").dataset.mode;
+let history = [];
+let busy = false;
+const log = document.getElementById("log");
+const input = document.getElementById("input");
+const files = document.getElementById("files");
+const fileinfo = document.getElementById("fileinfo");
+const send = document.getElementById("send");
+
+document.getElementById("tabs").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-mode]");
+  if (!btn || busy) return;
+  for (const b of document.querySelectorAll("#tabs button"))
+    b.setAttribute("aria-selected", String(b === btn));
+  mode = btn.dataset.mode;
+  history = [];
+  log.innerHTML = "";
+  input.placeholder = PLACEHOLDER[mode] || "Ask a question…";
+});
+
+files.addEventListener("change", () => {
+  const n = files.files.length;
+  fileinfo.textContent = n ? `${n} image${n > 1 ? "s" : ""} attached` : "";
+});
+
+function bubble(cls, who, text) {
+  const el = document.createElement("div");
+  el.className = "msg " + cls;
+  el.innerHTML = `<div class="who"></div><div class="body"></div>`;
+  el.querySelector(".who").textContent = who;
+  el.querySelector(".body").textContent = text || "";
+  log.append(el);
+  el.scrollIntoView({ block: "end" });
+  return el.querySelector(".body");
+}
+
+async function readImages() {
+  const out = [];
+  for (const f of files.files) {
+    const buf = await f.arrayBuffer();
+    let bin = "";
+    const bytes = new Uint8Array(buf);
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    out.push({ media_type: f.type, data: btoa(bin) });
+  }
+  return out;
+}
+
+function setBusy(on) {
+  busy = on;
+  send.disabled = on;
+  send.textContent = on ? "Working…" : "Send";
+}
+
+document.getElementById("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (busy) return;
+  const text = input.value.trim();
+  const imgs = await readImages();
+  if (!text && !imgs.length) return;
+
+  bubble("me", "You", text + (imgs.length ? `\n[${imgs.length} image(s)]` : ""));
+  input.value = "";
+  files.value = "";
+  fileinfo.textContent = "";
+  setBusy(true);
+
+  try {
+    if (mode === "read") await readResult(text, imgs);
+    else await chat(text, imgs);
+  } catch (err) {
+    bubble("err", "Error", String(err.message || err));
+  } finally {
+    setBusy(false);
+  }
+});
+
+async function chat(text, images) {
+  const body = bubble("", "Assistant", "");
+  const res = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ mode, message: text, images, history }),
+  });
+  if (!res.ok) {
+    const j = await res.json().catch(() => ({}));
+    throw new Error(j.error || `request failed (${res.status})`);
+  }
+  const reader = res.body.getReader();
+  const dec = new TextDecoder();
+  let buf = "", acc = "";
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+    const frames = buf.split("\n\n");
+    buf = frames.pop();
+    for (const frame of frames) {
+      const line = frame.split("\n").find((l) => l.startsWith("data:"));
+      if (!line) continue;
+      const ev = JSON.parse(line.slice(5).trim());
+      if (ev.type === "delta") { acc += ev.text; body.textContent = acc; }
+      else if (ev.type === "truncated") { acc += "\n\n[cut off at the length limit]"; body.textContent = acc; }
+      else if (ev.type === "error") { body.parentElement.classList.add("err"); body.textContent = ev.error; return; }
+    }
+    body.scrollIntoView({ block: "end" });
+  }
+  if (acc) history.push({ role: "user", content: text }, { role: "assistant", content: acc });
+}
+
+function callClass(call) {
+  if (call === "target detected") return "call-pos";
+  if (call === "target not detected") return "call-neg";
+  return "call-other";
+}
+
+async function readResult(notes, images) {
+  const res = await fetch("/api/read-result", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ notes, images }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || `request failed (${res.status})`);
+
+  const el = document.createElement("div");
+  el.className = "msg structured";
+  const rows = (data.samples || []).map((s) => `
+    <tr><td>${esc(s.label)}</td>
+        <td class="${callClass(s.call)}">${esc(s.call)}</td>
+        <td>${esc(s.confidence)}</td>
+        <td>${esc(s.reasoning)}</td></tr>`).join("");
+  el.innerHTML = `
+    <div class="who">Reading</div>
+    <div class="banner ${data.run_valid ? "ok" : "bad"}">
+      ${data.run_valid ? "Run valid" : "RUN INVALID — no sample result may be reported"}:
+      ${esc(data.run_comment || "")}
+    </div>
+    ${rows ? `<table><thead><tr><th>Sample</th><th>Call</th><th>Confidence</th>
+      <th>Why</th></tr></thead><tbody>${rows}</tbody></table>` : ""}
+    ${(data.improve_reading || []).length ? `<div><strong>To read this more reliably</strong>
+      <ul>${data.improve_reading.map((s) => `<li>${esc(s)}</li>`).join("")}</ul></div>` : ""}
+    <div class="sub">${esc(data.caveat || "")}</div>`;
+  log.append(el);
+  el.scrollIntoView({ block: "end" });
+}
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+</script>
+</body>
+</html>
